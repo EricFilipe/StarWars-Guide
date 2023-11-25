@@ -170,6 +170,9 @@ function convertLife(avaregeLife) {
     if(avaregeLife === 'unknown') {
         return 'desconhecida'
     }
+    if(avaregeLife === 'indefinite') {
+        return 'indeterminada'
+    }
 
     return `${avaregeLife} anos`
 }
