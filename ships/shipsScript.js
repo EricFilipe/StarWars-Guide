@@ -178,6 +178,9 @@ function convertLength(length) {
 }
 
 function convertSpeed(maxSpeed) {
+    if(maxSpeed === 'n/a'){
+        return 'n/a'
+    }
     if(maxSpeed === 'unknown'){
         return 'desconhecida'
     }
