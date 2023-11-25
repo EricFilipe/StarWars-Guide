@@ -33,7 +33,7 @@ async function loadSpecies(url) {
             
             const specieName = document.createElement('span')
             specieName.className = 'character-name'
-            specieName.innerText = `${species.name}`
+            specieName.innerText = `${convertName(species.name)}`
 
             mainContent.appendChild(card);
             card.appendChild(nameBg);
@@ -52,7 +52,7 @@ async function loadSpecies(url) {
 
                 const name = document.createElement('span')
                 name.className = 'character-details'
-                name.innerText = `especie: ${species.name}`
+                name.innerText = `especie: ${convertName(species.name)}`
 
                 const classification = document.createElement('span')
                 classification.className = 'character-details'
@@ -126,6 +126,14 @@ async function loadPreviousPage() {
         console.log(error)
         alert ('Erro ao carregar página anterior')
     }
+}
+
+function convertName(name) {
+    const nome = {
+        human: 'humano'
+    }
+
+    return nome[name.toLowerCase()] || name
 }
 
 function convertHeight(avaregeHeight) {
